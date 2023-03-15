@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
+    <title>Alarm On</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <div class="wrapper">
+      <form id="myForm_set_alarm" action="http://167.99.78.90:3237/set_alarm" method="POST">
+        <input type="hidden" id="name" name="name" value={{user_name}}>
+        <input type="hidden" id="id" name="id" value={{user_id}}>
+      </form>
+      <form id="myForm_analytics" action="http://167.99.78.90:3237/analytics" method="POST">
+        <input type="hidden" id="name" name="name" value={{user_name}}>
+        <input type="hidden" id="id" name="id" value={{user_id}}>
+      </form>
+      <img src="{{ url_for('static', filename= 'files/alarm-clock.jpeg') }}" alt="clock">
+      <h1>00:00:00 PM</h1>
+        <div class="text" id="GoodMorningText">
+          <b>Good morning {{ user_name }}!</b>
+          <b>Have a nice day</b>
+        </div>
+        <br>
+        <img src="{{ url_for('static', filename='files/smiley.jpg')}}" alt="smiley" id="smiley">
+        <br><br>
+        <div class="text" id="question">
+          <b>Want to schedule new alarm?</b>
+        </div>
+      <div class="ScheduleButton">
+        <button>Click Here!</button>
+      </div>
+      <div class="text" id="question2">
+        <br>
+        <b>For your data analysis: </b>
+      </div>
+      <div class="AnalysisButton">
+        <button>Click Here!</button>
+      </div>
+    </div>
+    <script type=text/javascript src="{{ url_for('static', filename='js/script-alarm_on.js')}}"></script>
+  </body>
+</html>

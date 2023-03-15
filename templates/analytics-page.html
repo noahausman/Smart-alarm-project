@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/style_for_analytics.css') }}">
+    <title>Title</title>
+</head>
+<body>
+    <div class="wrapper">
+        <form id="myForm" action="http://167.99.78.90:3237/set_alarm" method="POST">
+            <input type="hidden" id="name" name="name" value={{user_name}}>
+            <input type="hidden" id="id" name="id" value={{user_id}}>
+        </form>
+        <h1>{{ user_name }}, here is your data analytics</h1>
+        <img src="{{ url_for('static', filename='files/avg_time_per_month_plot.png') }}" alt="avg_time_per_month">
+        <br>
+        <img src="{{ url_for('static', filename='files/last_month_data_plot.png') }}" alt="last_month_data">
+        <br>
+        <img src="{{ url_for('static', filename='files/alarm_times_count_plot.png') }}" alt="alarm_times_count">
+        <button>Set Alarm</button>
+    </div>
+    <script type=text/javascript src="{{ url_for('static', filename= 'js/script_for_analytics.js') }}"></script>
+</body>
+</html>

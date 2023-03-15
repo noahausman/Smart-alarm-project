@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand');
+
+body{
+    font-size: 20px;
+    font-weight: 500;
+    background-color: #ffb260;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: normal;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn{
+    color: black;
+    background-color: #9a98bd;
+    border: solid #6d6b85;
+}
+
+.container{
+    padding-top: 100px;
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
+    <title>Set Alarm</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <div class="wrapper">
+      <p hidden id="user_id" >{{ user_id }}</p>
+      <form id="myForm" action="http://167.99.78.90:3237/alarm_on" method="POST">
+        <input type="hidden" id="name" name="name" value={{user_name}}>
+        <input type="hidden" id="id" name="id" value={{user_id}}>
+      </form>
+      <h2>Hello {{ user_name }},</h2>
+      <img src="{{ url_for('static', filename= 'files/alarm-clock.jpeg') }}" alt="clock">
+      <h1>00:00:00 PM</h1>
+      <div class="time">
+        <div class="column">
+          <select>
+            <option value="Hour" selected disabled hidden>Hour</option>
+          </select>
+        </div>
+        <div class="column">
+          <select>
+            <option value="Minute" selected disabled hidden>Minute</option>
+          </select>
+        </div>
+        <div class="column">
+          <select>
+            <option value="AM/PM" selected disabled hidden>AM/PM</option>
+          </select>
+        </div>
+      </div>
+      <button>Set Alarm</button>
+    </div>
+    <script type=text/javascript src="{{ url_for('static', filename='js/script-set_alarm.js')}}"></script>
+  </body>
+</html>
